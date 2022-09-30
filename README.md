@@ -63,11 +63,15 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    -I attemped to add a new toy through the form. It returned a code 500 error with an uminitialized constant ToysController::Toys. this implied that a name was either misspelled or undefined. turns out toy was misspelled. Changed toys to toy.
+
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged:-- The rails logs displayed a NoMethodError (undefined method `update' for nil:NilClass): this implies that either not using controllers in the JSON format of my fetch request dint render adding a render json:toy at the bottom fixed the error
+
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged:--The terminal was desplaying a ActionController::RoutingError (No route matches  [DELETE] "/toys/11"): i added the destroy resource to the routes.rb file and was able to detroy there after
+
